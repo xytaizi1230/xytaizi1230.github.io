@@ -1,7 +1,9 @@
 /**
- * Implement Gatsby's Browser APIs in this file.
+ * 在此文件中实现Gatsby的浏览器API。
  *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
  */
 
-// You can delete this file if you're not using it
+import './src/styles/global.scss'
+
+// 如果不使用此文件，可以将其删除
