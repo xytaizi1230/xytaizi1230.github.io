@@ -1,15 +1,15 @@
 import * as React from "react"
-
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import { Link } from "gatsby"
+import Seo from "../components/SeoSSR"
 
 export const Head = () => <Seo title="404: Not Found" />
 
 const NotFoundPage = () => (
-  <Layout>
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
+  <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+    <h1>404</h1>
+    <p>你发现了一条没人走过的路</p>
+    <Link to="/">返回主页</Link>
+  </div>
 )
 
 export default NotFoundPage

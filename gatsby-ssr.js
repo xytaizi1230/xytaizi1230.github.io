@@ -8,5 +8,5 @@
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
 exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `zh-cn` })
+  setHtmlAttributes({ lang: `zh-CN` })
 }

@@ -2,9 +2,10 @@ import * as React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import Seo from "../components/SeoSSR"
 
-const UsingSSR = ({ serverData }) => {
+const UsingSSR = ({ serverData }: GlobalGraphql) => {
+  console.log("🚀 cjc - UsingSSR - serverData:", serverData)
   return (
     <Layout>
       <h1>
@@ -37,12 +38,14 @@ export const Head = () => <Seo title="Using SSR" />
 export default UsingSSR
 
 export async function getServerData() {
+  // 这里的log会在终端输出
   try {
     const res = await fetch(`https://dog.ceo/api/breed/shiba/images/random`)
     if (!res.ok) {
       throw new Error(`Response failed`)
     }
     return {
+      // props会映射到serverData上
       props: await res.json(),
     }
   } catch (error) {

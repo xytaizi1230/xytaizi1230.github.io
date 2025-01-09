@@ -4,6 +4,6 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
  */
 
-import './src/styles/global.scss'
+import './src/styles/layout.global.scss'
 
 // 如果不使用此文件，可以将其删除

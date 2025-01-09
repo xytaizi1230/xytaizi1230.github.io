@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/Layout"
-import * as Styles from "./index.module.scss"
+import * as styles from "./index.module.scss"
 
 export const query = graphql`
   query MyQuery {
@@ -27,7 +27,7 @@ export default ({ data }: { data: GraphqlDate }) => {
 
   return (
     <Layout>
-      <div className={Styles.filesContainer}>
+      <div className={styles.filesContainer}>
         <h1>My Site's Files</h1>
         <table>
           <thead>

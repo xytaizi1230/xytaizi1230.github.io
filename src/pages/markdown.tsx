@@ -4,7 +4,10 @@ import Layout from "../components/Layout"
 
 export const query = graphql`
   query MyQuery {
-  allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+  allMarkdownRemark(
+  sort: {frontmatter: {date: DESC}}
+  filter: {fields: {slug: {regex: "/markdown/"}}}
+  ) {
     edges {
       node {
         id

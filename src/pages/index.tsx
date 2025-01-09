@@ -1,61 +1,51 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import Seo from "../components/SeoSSR"
 import * as styles from "../styles/index.module.scss"
-import { url } from "inspector"
 
-const samplePageLinks = [
-  {
-    url: '/markdown/2/',
-    text: '第二篇文章',
-  },
-  {
-    url: '/markdown/1/',
-    text: '第一篇文章',
+export const Head = () => <Seo title="Home" />
+
+const IndexPage = () => {
+  const linkOnClick = ({ target }: any) => {
+    navigate(target.dataset.to)
   }
-]
 
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../filesystem/images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        style={{ marginBottom: `var(--space-3)` }}
-        alt="Logo"
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
+  return (
+    <Layout>
+      <h1 className={styles.title}>
+        <StaticImage
+          src="../images/avatar.webp"
+          loading="eager"
+          width={64}
+          quality={95}
+          formats={["auto", "webp", "avif"]}
+          style={{ borderRadius: "8px" }}
+          alt="Logo"
+        />
+        <p>
+          欢迎来到 <b>妙妙屋!</b>
+        </p>
       </h1>
       <div className={styles.intro}>
-        <b>Example pages:</b>
-        <ul>
-
-          {samplePageLinks.map((link, i) => (
-            <li key={link.url}>
-              <Link to={link.url}>{link.text}</Link>
-              {i !== samplePageLinks.length - 1 && <> · </>}
-            </li>
-          ))}
-        </ul>
-
-
+        <b>这里有以下内容:</b>
       </div>
-    </div>
-  </Layout>
-)
-
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+      <div className={styles.textCenter}>
+        <div data-to="/markdown" data-desc="打工人的知识点" onClick={linkOnClick}>
+          随记
+        </div>
+        <div data-to="/knowledge" data-desc="打工人的知识点" onClick={linkOnClick}>
+          卷卷
+        </div>
+        <div data-to="/bored" data-desc="无聊了来摸摸鱼" onClick={linkOnClick}>
+          摸摸鱼
+        </div>
+        <div data-to="/game" data-desc="very very good" onClick={linkOnClick}>好玩的</div>
+      </div>
+    </Layout>
+  )
+}
 
 export default IndexPage

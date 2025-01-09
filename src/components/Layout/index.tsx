@@ -9,6 +9,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../Header"
+import * as styles from './index.module.scss'
 import "./layout.css"
 
 const Layout = ({ children }: { children: any }) => {
@@ -23,28 +24,29 @@ const Layout = ({ children }: { children: any }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
+    <div className={styles.layout}>
+      <div className={styles.header}>
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      </div>
+      <main className={styles.container}>
+        {children}
+      </main>
+      <footer
+        className={styles.footer}
         style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
+          marginTop: `var(--space-5)`,
+          fontSize: `var(--font-sm)`,
         }}
       >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://xytaizi1230.github.io">xytaizi1230</a>
-        </footer>
-      </div>
-    </>
+        <div><a href="https://xytaizi1230.github.io">&copy;xytaizi1230</a></div>
+        <div>
+          {new Date().toLocaleString()}
+        </div>
+        <div>
+          ???
+        </div>
+      </footer>
+    </div>
   )
 }
 

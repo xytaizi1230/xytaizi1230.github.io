@@ -9,14 +9,21 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `xytaizi1230`,
-    description: `欢迎光临`,
-    author: `@xytaizi1230`,
+    title: `妙妙屋`,
+    description: `密斯卡乌斯卡`,
+    author: `xytaizi1230`,
     siteUrl: `https://xytaizi1230.github.io/`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        sassOptions: {
+          api: 'modern-compiler',
+        },
+        sassRuleModulesTest: /\.module\.scss$/,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,8 +32,11 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
+    // 站点配置
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -38,7 +48,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon-32x32.png`, // This path is relative to the root of the site.
       },
     },
   ]
