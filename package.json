@@ -7,7 +7,7 @@
   "homepage": "http://xytaizi1230.github.io/",
   "keywords": ["gatsby", "gh-pages"],
   "scripts": {
-    "deploy": "gatsby build && gh-pages -d public --force",
+    "deploy": "gatsby build && gh-pages -d public",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",

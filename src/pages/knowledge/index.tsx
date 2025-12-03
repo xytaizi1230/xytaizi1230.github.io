@@ -5,7 +5,8 @@ import Seo from "@/components/SeoSSR"
 
 export const Head = () => <Seo title="卷卷" description="某人间歇性发奋图强时留下的痕迹;WEB;Node.js;程序员;" />
 
-export default ({ data }: { data: GraphqlDate }) => (
+// export default ({ data }: { data: GraphqlDate }) => (
+export default () => (
   <Layout>
     <div>
       <h1>也不知道这人到底在卷什么</h1>
