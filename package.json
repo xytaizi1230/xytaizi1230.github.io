@@ -18,10 +18,12 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.22-rc.20250304",
     "@types/node": "^22.10.5",
     "@types/react": "^19.0.3",
     "@types/react-dom": "^19.0.2",
     "gatsby": "^5.14.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-manifest": "^5.14.0",
     "gatsby-plugin-react-helmet": "^6.14.0",
@@ -35,10 +37,12 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "sass": "^1.83.1",
+    "three": "^0.181.2",
     "typescript": "^5.7.2"
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.11",
+    "@types/three": "^0.180.0",
     "prettier": "^2.8.8"
   },
   "license": "MIT",

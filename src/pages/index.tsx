@@ -36,13 +36,15 @@ const IndexPage = () => {
         <div data-to="/markdown" data-desc="打工人的知识点" onClick={linkOnClick}>
           随记
         </div>
-        <div data-to="/knowledge" data-desc="打工人的知识点" onClick={linkOnClick}>
+        <div data-to="/knowledge" data-desc="到底在卷什么呢" onClick={linkOnClick}>
           卷卷
         </div>
         <div data-to="/bored" data-desc="无聊了来摸摸鱼" onClick={linkOnClick}>
           摸摸鱼
         </div>
         <div data-to="/game" data-desc="very very good" onClick={linkOnClick}>好玩的</div>
+        <div data-to="/using-ssr" data-desc="using-ssr" onClick={linkOnClick}>using-ssr</div>
+        <div data-to="/using-typescript" data-desc="using-typescript" onClick={linkOnClick}>using-typescript</div>
       </div>
     </Layout>
   )

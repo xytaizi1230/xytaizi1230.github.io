@@ -1,0 +1,56 @@
+#game-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+#video-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #333;
+  z-index: 10;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+.hud {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 5;
+  pointer-events: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 1px 1px 0 #fff;
+}
+#score-display {
+  font-size: 32px;
+  color: #d32f2f;
+}
+#combo-display {
+  color: #ff9800;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 40px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 2px 2px 0 #fff;
+}

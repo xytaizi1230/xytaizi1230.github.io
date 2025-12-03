@@ -9,11 +9,10 @@ const UsingSSR = ({ serverData }: GlobalGraphql) => {
   return (
     <Layout>
       <h1>
-        This page is <b>rendered server-side</b>
+        此页面由 <b>服务端渲染</b>
       </h1>
       <p>
-        This page is rendered server side every time the page is requested.
-        Reload it to see a(nother) random photo from{" "}
+        每次请求此页面时，页面都会在服务器端重新渲染。刷新页面即可查看另一张随机照片：&nbsp;
         <code>dog.ceo/api/breed/shiba/images/random</code>:
       </p>
       <img
@@ -22,13 +21,13 @@ const UsingSSR = ({ serverData }: GlobalGraphql) => {
         src={serverData.message}
       />
       <p>
-        To learn more, head over to our{" "}
+        要了解更多信息，请前往&nbsp;
         <a href="https://www.gatsbyjs.com/docs/reference/rendering-options/server-side-rendering/">
-          documentation about Server Side Rendering
+          服务端渲染文档
         </a>
         .
       </p>
-      <Link to="/">Go back to the homepage</Link>
+      <Link to="/">返回首页</Link>
     </Layout>
   )
 }

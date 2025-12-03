@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
+const path = require('path');
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -30,6 +31,15 @@ module.exports = {
         name: `filesystem`,
         path: `${__dirname}/src/filesystem`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@": path.resolve(__dirname, 'src/')
+        },
+        extensions: []
+      }
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-image`,

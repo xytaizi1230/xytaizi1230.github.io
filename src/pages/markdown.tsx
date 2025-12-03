@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
+import Seo from "../components/SeoSSR"
 
 export const query = graphql`
   query MyQuery {
@@ -27,6 +28,7 @@ export const query = graphql`
   }
 }
 `
+export const Head = () => <Seo title="某人的奇怪知识点" description="某人的奇怪知识点;开发知识点;知识点;开发踩坑;" />
 
 export default ({ data }: { data: GraphqlDate }) => (
   <Layout>
