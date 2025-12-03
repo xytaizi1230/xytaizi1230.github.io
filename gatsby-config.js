@@ -9,6 +9,7 @@ const path = require('path');
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  // pathPrefix: process.env.NODE_ENV === 'production' ? '/' : '',
   siteMetadata: {
     title: `妙妙屋`,
     description: `密斯卡乌斯卡`,
