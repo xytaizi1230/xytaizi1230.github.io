@@ -1,0 +1,29 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  flex: none;
+}
+
+.container {
+  flex: auto;
+  min-width: 672px;
+  margin: 0 auto;
+  max-width: var(--size-content);
+  padding: var(--size-gutter);
+}
+
+.footer {
+  flex: none;
+  padding: var(--space-4) var(--size-gutter);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & > div {
+    flex: none;
+  }
+}
