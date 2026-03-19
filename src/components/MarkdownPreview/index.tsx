@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight"; // 代码高亮
 import remarkFrontmatter from "remark-frontmatter"; // 支持frontmatter
+import remarkGfm from "remark-gfm"; // 支持frontmatter
 import "github-markdown-css/github-markdown.css"; // MD 基础样式
 import "highlight.js/styles/github-dark.css"; // 代码高亮样式（可选，可换其他风格）
 
@@ -18,7 +19,8 @@ export default function MarkdownPreview({ mdContent }: { mdContent: string }) {
       }}
     >
       <ReactMarkdown
-        rehypePlugins={[rehypeHighlight, remarkFrontmatter]} // 启用代码高亮
+        remarkPlugins={[remarkGfm, remarkFrontmatter]}
+        rehypePlugins={[rehypeHighlight]} // 启用代码高亮
         // 可选：自定义渲染规则（比如给链接加新窗口打开）
         components={{
           a: ({ href, children }) => (
